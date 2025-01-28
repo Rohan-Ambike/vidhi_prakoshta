@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <title>विधी प्रकोष्ठ</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- SwiperJS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- GSAP Scroll Trigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- SwiperJS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4JQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/utilities.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 153, 51, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero {
+            background: url('path/to/hero-image.jpg') no-repeat center center/cover;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ff9933;
+        }
+
+        .section-content {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background-color: #ffcc99;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #003d66;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+
+        .footer {
+            background-color: #ff9933;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer button {
+            margin-top: 10px;
+        }
+
+        .section-alternate {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 0;
+        }
+
+        .section-alternate img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-alternate:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+
+<body style="background-color: #fdf2da;">
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg z-0">
+        <div class="container py-2">
+            <img src="./images/WhatsApp_Image_2025-01-28_at_12.39.59_12479e06-removebg-preview.png" alt="logo image"
+                width="150px">
+            <a class="navbar-brand text-white ps-3" href="#">विधी प्रकोष्ठ</a>
+            <button class="navbar-toggler" type="button" onclick="openNav()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">मुख्यपृष्ठ</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="legalcell.html">कायदेशीर प्रकोष्ठ</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="events.html">घटनाक्रम</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="gallery.html">बातम्या आणि अद्यतने</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="contactUs.html">संपर्क</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar z-1">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">मुख्यपृष्ठ</a>
+        <a href="legalcell.html">कायदेशीर प्रकोष्ठ</a>
+        <a href="events.html">घटनाक्रम</a>
+        <a href="gallery.html">बातम्या आणि अद्यतने</a>
+        <a href="contactUs.html">संपर्क</a>
+    </div>
+
+    <!-- Content Section -->
+    <section id="contact" class="mt-9 py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">संपर्क साधा</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label fs-4">नाव</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fs-4">ईमेल</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label fs-4">संदेश</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">प्रस्तुत करा</button>
+                    </form>
+                </div>
+                <div class="col-md-6 fs-3 py-5 ps-5">
+                    <h5>आमचा पत्ता</h5>
+                    <p>1234 स्ट्रीट नेम, सिटी, स्टेट, 12345</p>
+                    <h5>आम्हाला ईमेल करा</h5>
+                    <p>info@example.com</p>
+                    <h5>आम्हाला कॉल करा</h5>
+                    <p>(123) 456-7890</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2025 विधी प्रकोष्ठ. सर्व हक्क राखीव.</p>
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#contactModal">संपर्क
+                साधा</button>
+        </div>
+    </footer>
+
+    <!-- Contact Us Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">संपर्क साधा</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">नाव</label>
+                            <input type="text" class="form-control" id="name" placeholder="तुमचे नाव प्रविष्ट करा">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">ईमेल</label>
+                            <input type="email" class="form-control" id="email" placeholder="तुमचा ईमेल प्रविष्ट करा">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">संदेश/चिंता</label>
+                            <textarea class="form-control" id="message" rows="5"
+                                placeholder="तुमची चिंता वर्णन करा"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">प्रस्तुत करा</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

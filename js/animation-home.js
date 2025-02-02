@@ -35,6 +35,7 @@ let scaleAnimations = [
     { class: "#alternate2", y: 100, delay: 0.5, markers: false },
     { class: "#alternate3", y: 100, delay: 0.5, markers: false },
     { class: "#alternate4", y: 100, delay: 0.5, markers: false },
+    { class: "#alternate5", y: 100, delay: 0.5, markers: false },
     { class: ".swiper", y: 100, delay: 0.5, markers: false },
 
 
